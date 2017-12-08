@@ -18,6 +18,7 @@ public class MemoryCell {
 
     public static void main(String[] args) {
         //简易内存实现
+        System.out.println("------ 简易内存实现 ------");
         MemoryCell memory = new MemoryCell();
         String s1 = "你好啊";
         memory.write(s1);
@@ -28,9 +29,5 @@ public class MemoryCell {
         memory.write(i1);
         Integer i2 = (Integer)memory.read();
         System.out.println(i2);
-        System.out.println("");
-
-        //自动 装箱/拆箱
-
     }
 }
