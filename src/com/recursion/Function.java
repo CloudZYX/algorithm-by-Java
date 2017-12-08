@@ -28,6 +28,13 @@ public class Function {
         System.out.print(n % 10);
     }
 
+    /**
+     * 斐波那契数列（递归实现）
+     * @param n
+     */
+    public void fibonacciSequence(int n){
+
+    }
 
     public static void main(String[] args) {
         //函数f(x) = 2f(x - 1) + x^2的递归实现
