@@ -32,8 +32,13 @@ public class Function {
      * 斐波那契数列（递归实现）
      * @param n
      */
-    public void fibonacciSequence(int n){
-
+    public static int fibonacciSequence(int n){
+        if (n == 1){
+            return 1;
+        }if (n >= 2){
+            return fibonacciSequence(n - 1) + fibonacciSequence(n - 2);
+        }
+        return 0;
     }
 
     public static void main(String[] args) {
@@ -43,5 +48,10 @@ public class Function {
 
         //逐个打印整数
         fun1.printOneInt(15);
+        System.out.println("");
+
+        //斐波那契数列
+        int i = Function.fibonacciSequence(8);
+        System.out.println("斐波那契：" + i);
     }
 }
