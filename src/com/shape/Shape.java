@@ -67,5 +67,8 @@ public class Shape implements Comparable {
         shapes[1] = rectangle;
 
         System.out.println("数组中最大面积为："+ Shape.findMaxArea(shapes).getArea());
+
+        //计算图形数组的面积之和
+        GenericShape.countArea(shapes);
     }
 }
