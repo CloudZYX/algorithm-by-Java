@@ -1,4 +1,4 @@
-package com.memory;
+package com.first.memory;
 
 public class GenericMemory<T> {
 
