@@ -60,25 +60,37 @@ public class MaxSubSum {
      * @return
      */
     public static int maxSubSum3(int[] array,int left,int right){
-        if (left <= right){
+        if (left >= right){
             return array[left];
         }
 
         int mid = (left + right) / 2;
-        maxSubSum3(array,left,mid);
+        //1.以往每次结果的保存（maxLeftSub，maxRightSub）
+        int maxLeftSub = maxSubSum3(array,left,mid);
         //关于中点的处理问题
-        maxSubSum3(array,mid + 1,left);
+        int maxRightSub = maxSubSum3(array,mid + 1,left);
 
-        int maxLeftSub = 0;
-        int maxRightSub = 0;
+        int maxLeftBoard = 0;
+        int leftBoard = 0;
+        int maxRightBoard = 0;
+        int rightBoard = 0;
+        //当前调用的结果
         for (int i = left;i <= mid;i++){
-            maxLeftSub += array[i];
+            leftBoard += array[i];
+            if (maxLeftBoard < leftBoard){
+                maxLeftBoard = leftBoard;
+            }
         }
-        for (int i = mid;i <= right;i++){
-            maxRightSub += array[i];
+        for (int i = mid + 1;i <= right;i++){
+            rightBoard += array[i];
+            if (maxRightBoard < rightBoard){
+                maxRightBoard = rightBoard;
+            }
         }
 
-        return maxNum(maxLeftSub,maxRightSub,maxLeftSub + maxRightSub);
+        //比较保留当前结果
+        int maxSum = maxNum(maxLeftSub,maxRightSub,maxLeftBoard + maxRightBoard);
+        return maxSum;
     }
 
     private static int maxNum(int leftSum,int rightSum,int midSum){
@@ -87,12 +99,12 @@ public class MaxSubSum {
             return  leftSum;
         }
         if ((rightSum >= leftSum) && (rightSum >= midSum)){
-            return  leftSum;
+            return  rightSum;
         }
         if ((midSum >= leftSum) && (midSum >= rightSum)){
-            return  leftSum;
+            return  midSum;
         }
-        return leftSum;
+        return 0;
     }
 
     /**
@@ -105,7 +117,7 @@ public class MaxSubSum {
         int subSum = 0;
 
         for (int i = 0;i < array.length;i++){
-            if ((subSum == 0) && (array[i] >=0)){
+            if ((subSum != 0) || (array[i] >=0)){
                 subSum += array[i];
 
                 if (subSum < 0){
@@ -121,7 +133,8 @@ public class MaxSubSum {
     }
 
     public static void main(String[] args){
-        int[] array = {1,5,-4,15,2,14,-7,1};
+        //TODO 当前方法都不能计算最大值为负的数列
+        int[] array = {-1,-5,-4,-15,-2,-14,-7,-1,-7};
 
         System.out.println("穷举法的结果是：" + MaxSubSum.maxSubSum1(array));
         System.out.println("改进后穷举法的结果是：" + MaxSubSum.maxSubSum2(array));
