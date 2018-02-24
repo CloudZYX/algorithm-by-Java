@@ -133,7 +133,7 @@ public class MaxSubSum {
     }
 
     public static void main(String[] args){
-        //TODO 当前方法都不能计算最大值为负的数列
+        //TODO 当前方法 都 不能计算最大值为负的数列
         int[] array = {-1,-5,-4,-15,-2,-14,-7,-1,-7};
 
         System.out.println("穷举法的结果是：" + MaxSubSum.maxSubSum1(array));
