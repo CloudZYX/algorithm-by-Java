@@ -10,7 +10,7 @@ public class MaxSubSum {
      * @return
      */
     public static int maxSubSum1(int[] array){
-        int maxSub = 0;
+        int maxSub = array[0];
 
         int subSum = 0;
         for (int i = 0;i < array.length;i++){
@@ -36,7 +36,7 @@ public class MaxSubSum {
      * @return
      */
     public static int maxSubSum2(int[] array){
-        int maxSub = 0;
+        int maxSub = array[0];
         int subSum = 0;
         for (int i = 0;i < array.length;i++){
             subSum = 0;
@@ -66,24 +66,33 @@ public class MaxSubSum {
 
         int mid = (left + right) / 2;
         //1.以往每次结果的保存（maxLeftSub，maxRightSub）
-        int maxLeftSub = maxSubSum3(array,left,mid);
+        int maxLeftSub = maxSubSum3(array,left,mid);    //右半部最大值
         //关于中点的处理问题
-        int maxRightSub = maxSubSum3(array,mid + 1,left);
+        int maxRightSub = maxSubSum3(array,mid + 1,right);  //左半部最大值
 
         int maxLeftBoard = 0;
         int leftBoard = 0;
-        int maxRightBoard = 0;
-        int rightBoard = 0;
-        //当前调用的结果
-        for (int i = left;i <= mid;i++){
+        boolean leftFlag = true;
+        //计算中间最大值
+        for (int i = mid;i >= left;i--){
             leftBoard += array[i];
-            if (maxLeftBoard < leftBoard){
+            if(leftFlag){
+                maxLeftBoard = leftBoard;
+                leftFlag = false;
+            }else if (maxLeftBoard < leftBoard){
                 maxLeftBoard = leftBoard;
             }
         }
+        
+        int maxRightBoard = 0;
+        int rightBoard = 0;
+        boolean rightFlag = true;
         for (int i = mid + 1;i <= right;i++){
             rightBoard += array[i];
-            if (maxRightBoard < rightBoard){
+            if(rightFlag){
+                maxRightBoard = rightBoard;
+                rightFlag = false;
+            }else if (maxRightBoard < rightBoard){
                 maxRightBoard = rightBoard;
             }
         }
@@ -113,19 +122,20 @@ public class MaxSubSum {
      * @return
      */
     public static int maxSubSum4(int[] array){
-        int maxSub = 0;
+        int maxSub = array[0];
         int subSum = 0;
 
         for (int i = 0;i < array.length;i++){
-            if ((subSum != 0) || (array[i] >=0)){
-                subSum += array[i];
+            subSum += array[i];
 
-                if (subSum < 0){
-                    subSum = 0;
-                }
-                if (maxSub < subSum){
+            if (subSum < 0){
+                //最大子序列开头位置的数不会是负数
+                if(maxSub < subSum){
                     maxSub = subSum;
                 }
+                subSum = 0;
+            }else if (maxSub < subSum){
+                maxSub = subSum;
             }
         }
 
@@ -134,7 +144,7 @@ public class MaxSubSum {
 
     public static void main(String[] args){
         //TODO 当前方法 都 不能计算最大值为负的数列
-        int[] array = {-1,-5,-4,-15,-2,-14,-7,-1,-7};
+        int[] array = {-3,-5,-4,-15,-2,-14,-7,-1,-7};
 
         System.out.println("穷举法的结果是：" + MaxSubSum.maxSubSum1(array));
         System.out.println("改进后穷举法的结果是：" + MaxSubSum.maxSubSum2(array));
