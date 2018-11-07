@@ -12,10 +12,15 @@ public class Circle extends Shape {
     public Circle(double radius){
         this.radius = radius;
         this.area = this.countArea();
+        this.sideLength = this.countSideLength();
     }
 
     @Override
     protected double countArea(){
         return this.radius * this.radius * Pi;
+    }
+
+    private double countSideLength(){
+        return this.radius * Pi * 2;
     }
 }

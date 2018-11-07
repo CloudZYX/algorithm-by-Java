@@ -1,4 +1,4 @@
-package com.second.maxSubSum;
+﻿package com.second.maxSubSum;
 
 /**
  * 最大子序列之和
