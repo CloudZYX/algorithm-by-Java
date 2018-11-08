@@ -25,6 +25,7 @@ public class MemoryCell {
         String s2 = (String)memory.read();
         System.out.println(s2);
 
+        //使用包装类实现基础类型的泛型
         Integer i1 = 15;
         memory.write(i1);
         Integer i2 = (Integer)memory.read();
