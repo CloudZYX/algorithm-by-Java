@@ -37,3 +37,35 @@ O(N),Ω(N),Θ(N)的定义（Θ-theta）
 
 算法运行时间出现对数时间的规律
 几种对数时间的算法：折半查找，欧几里得算法（求解最大公因数），幂运算
+
+三、表、栈和队列
+1.表
+表的简单实现（数组）
+    扩展数组的方式
+    数组实现的表的优点与缺点（查询、插入和删除）
+简单链表
+    链表的实现方式
+    双链表（用于删除）
+    链表的优点与缺点（查询、插入和删除）
+
+Collection接口：Collection、Iterator、List、ListIterator
+    Collection的定义：
+        函数：size()、isEmpty()、clear()、
+            contain(T x)、add(T x)、remove(T x)、
+            iterator()
+        实现（继承）了Iterable接口，必须定义iterator()
+            iterator()返回一个Iterator方法
+            可以使用增强for
+    Iterator的定义：hasNext()、next()、remove()
+        增强for的编译器实现（通过迭代器）
+        remove()函数
+            迭代器失效的情况（集合修改）
+            使用迭代器的remove()不会失效
+
+    List接口：继承Collection
+        函数：get(int i),set(int i, T x),add(int i, T x),remove(int i)
+            listIterator(int pos);
+        两种实现及其各自优缺点：ArrayList,LinkedList
+        问题：将值为偶数的项从集合中删除（problem）
+    listIterator接口：继承Iterator
+        函数：hasPrevious(),previous,add(T x),set(T x)

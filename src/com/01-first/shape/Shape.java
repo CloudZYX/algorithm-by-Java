@@ -3,7 +3,7 @@
 /**
  * Created by QDHL on 2017/12/6.
  */
-public class Shape implements Comparable {
+public class Shape implements Comparable<Shape> {
     //边长
     protected double sideLength;
 
@@ -26,6 +26,7 @@ public class Shape implements Comparable {
         return area;
     }
 
+    @Override
     public int compareTo(Shape shape) {
         if (this.area == shape.getArea()){
             return 0;
@@ -49,12 +50,6 @@ public class Shape implements Comparable {
         }
 
         return shapes[maxIndex];
-    }
-
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
     }
 
 
