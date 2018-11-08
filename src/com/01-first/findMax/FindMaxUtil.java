@@ -1,6 +1,11 @@
 ﻿import com.first.shape.Circle;
 import com.first.shape.Rectangle;
 import com.first.shape.Shape;
+import com.sun.javafx.css.Combinator;
+
+import java.util.Comparator;
+
+import com.first.findMax.StringComparaUtil;
 
 public class FindMaxUtil{
     /**
@@ -21,15 +26,31 @@ public class FindMaxUtil{
         return max;
     }
 
+    public static <T> int findMax(T[] arr, Comparator<T> cmp){
+        //利用多态实现的泛型
+        int max = 0;
+
+        for(int i = 1;i < arr.length;i++){
+            if(cmp.compareTo(arr[max],arr[i]) < 0){
+                max = i;
+            }
+        }
+
+        return max;
+    }
+
     public static void main(String[] args) {
         //使用接口表示泛型
         Shape[] shapeArr = {new Circle(1),
                         new Rectangle(4, 10)};        
-        System.out.println("最大的图形是" + shapeArr[findMax(shapeArr)]);
+        System.out.println("最大的图形是：" + shapeArr[findMax(shapeArr)]);
 
         String[] nameArr = {"zyx","blm","xzg","zyxL"};
-        System.out.println("" + findMax(nameArr));
+        System.out.println("最大的字符串是：" + findMax(nameArr));
+
+        StringComparaUtil cmp = new StringComparaUtil();
 
         //使用函数对象
+        System.out.println("最大的字符串是：" + findMax(nameArr, cmp));
     }
 }
