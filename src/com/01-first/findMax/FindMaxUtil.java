@@ -31,7 +31,7 @@ public class FindMaxUtil{
         int max = 0;
 
         for(int i = 1;i < arr.length;i++){
-            if(cmp.compareTo(arr[max],arr[i]) < 0){
+            if(cmp.compare(arr[max],arr[i]) < 0){
                 max = i;
             }
         }
