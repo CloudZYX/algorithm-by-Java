@@ -1,5 +1,8 @@
-﻿import java.util.function.Consumer;
+﻿package zyx.second.runtime;
+
+import java.util.function.Consumer;
 import java.util.function.Function;
+import zyx.second.runtime.Serise;
 
 public class MyFunction{
 
@@ -23,7 +26,7 @@ public class MyFunction{
 
     public static void main(String[] args) {
         System.out.println(fibonacciSequence(5));
-        SeriseClass serise = new SeriseClass();
+        Serise serise = new Serise();
 
         System.out.println(seriseFunction(serise,-5));
     }

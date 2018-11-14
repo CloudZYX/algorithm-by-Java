@@ -1,4 +1,4 @@
-﻿package com.second.maxSubSum;
+﻿package zyx.second.maxsubsum;
 
 /**
  * 最大子序列之和

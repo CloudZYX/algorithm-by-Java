@@ -1,4 +1,4 @@
-﻿package com.first.recursion;
+﻿package zyx.first.recursion;
 
 /**
  * Created by QDHL on 2017/12/6.

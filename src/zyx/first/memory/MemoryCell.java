@@ -1,4 +1,4 @@
-﻿package com.first.memory;
+﻿package zyx.first.memory;
 
 /**
  * Created by QDHL on 2017/12/6.

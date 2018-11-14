@@ -1,4 +1,4 @@
-﻿package com.first.shape;
+﻿package zyx.first.shape;
 
 public class GenericShape{
 

@@ -1,7 +1,9 @@
-﻿import java.util.function.BiFunction;
+﻿package zyx.second.runtime;
+
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
-public class SeriseClass implements Function<Integer,Integer>{
+public class Serise implements Function<Integer,Integer>{
     /**
      * 返回函数对象
      * @param i

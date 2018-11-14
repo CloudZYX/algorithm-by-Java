@@ -1,4 +1,6 @@
-﻿import java.util.Comparator;
+﻿package zyx.first.findmax;
+
+import java.util.Comparator;
 
 public class StringComparaUtil implements Comparator<String>{
 

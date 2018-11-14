@@ -1,4 +1,4 @@
-﻿package com.first.memory;
+﻿package zyx.first.memory;
 
 public class GenericMemory<T> {
 

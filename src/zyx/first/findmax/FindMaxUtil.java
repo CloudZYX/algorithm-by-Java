@@ -1,6 +1,8 @@
-﻿import com.first.shape.Circle;
-import com.first.shape.Rectangle;
-import com.first.shape.Shape;
+﻿package zyx.first.findmax;
+
+import zyx.first.shape.Circle;
+import zyx.first.shape.Rectangle;
+import zyx.first.shape.Shape;
 import com.sun.javafx.css.Combinator;
 
 import java.util.Comparator;
@@ -48,9 +50,9 @@ public class FindMaxUtil{
         String[] nameArr = {"zyx","blm","xzg","zyxL"};
         System.out.println("最大的字符串是：" + findMax(nameArr));
 
-        StringComparaUtil cmp = new StringComparaUtil();
 
         //使用函数对象
+        StringComparaUtil cmp = new StringComparaUtil();
         System.out.println("最大的字符串是：" + findMax(nameArr, cmp));
     }
 }
