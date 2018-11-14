@@ -4,7 +4,7 @@ import java.util.function.Function;
 public class MyFunction{
 
     public static int seriseFunction(Function<Integer,Integer> f,int n){
-        return f.accept(n);;
+        return f.apply(n);
     }
 
     /**
@@ -19,6 +19,13 @@ public class MyFunction{
             return fibonacciSequence(n - 1) + fibonacciSequence(n - 2);
         }
         return 0;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(fibonacciSequence(5));
+        SeriseClass serise = new SeriseClass();
+
+        System.out.println(seriseFunction(serise,-5));
     }
 
 }
