@@ -1,4 +1,4 @@
-﻿package zyx.first.findmax;
+package com.zyx.first.findmax;
 
 import java.util.Comparator;
 

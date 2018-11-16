@@ -1,8 +1,8 @@
-﻿package zyx.second.runtime;
+package com.zyx.second.runtime;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
-import zyx.second.runtime.Serise;
+import com.zyx.second.runtime.Serise;
 
 public class MyFunction{
 

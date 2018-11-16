@@ -1,4 +1,4 @@
-﻿package zyx.third.collectioninterface;
+package com.zyx.third.collectioninterface;
 
 public interface Collection<T> extends Iterable<T>{
     //集合大小
@@ -14,7 +14,4 @@ public interface Collection<T> extends Iterable<T>{
     void add(T t);
     //删除集合
     void remove(int i);
-
-    //获得迭代器
-    Itertor<T> iterator();
 }

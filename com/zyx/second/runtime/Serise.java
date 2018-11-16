@@ -1,4 +1,4 @@
-﻿package zyx.second.runtime;
+package com.zyx.second.runtime;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
