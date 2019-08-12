@@ -22,7 +22,6 @@ public class MaxSubSum {
 
                 if (maxSub < subSum){
                     maxSub = subSum;
-                    //在此处获取i、j的值
                 }
             }
         }
@@ -43,8 +42,8 @@ public class MaxSubSum {
             for (int j = i;j < array.length;j++){
                 subSum += array[j];
                 if (maxSub < subSum){
+                    //每次加等于运算后，都进行比较
                     maxSub = subSum;
-                    //在此处获取i、j的值
                 }
             }
         }
@@ -64,19 +63,20 @@ public class MaxSubSum {
             return array[left];
         }
 
+        //关于中点的处理问题（奇数与偶数）
         int mid = (left + right) / 2;
         //1.以往每次结果的保存（maxLeftSub，maxRightSub）
         int maxLeftSub = maxSubSum3(array,left,mid);    //右半部最大值
-        //关于中点的处理问题
         int maxRightSub = maxSubSum3(array,mid + 1,right);  //左半部最大值
 
-        int maxLeftBoard = 0;
-        int leftBoard = 0;
-        boolean leftFlag = true;
-        //计算中间最大值
+        //2.从中点开始分别计算左右半部最大和
+        int maxLeftBoard = 0;   //本次递归的最大左边界
+        int leftBoard = 0;  //左边界值
+        boolean leftFlag = true;    //是否是第一个值
         for (int i = mid;i >= left;i--){
             leftBoard += array[i];
             if(leftFlag){
+                //防止数列全是负数
                 maxLeftBoard = leftBoard;
                 leftFlag = false;
             }else if (maxLeftBoard < leftBoard){
