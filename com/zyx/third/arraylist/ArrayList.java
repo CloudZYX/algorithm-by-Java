@@ -39,7 +39,7 @@ public class ArrayList<T> implements Collection<T> {
 
     @Override
     public void add(T t) {
-
+        add(t,this.size);
     }
 
     public void add(T t, int idx){
@@ -53,9 +53,14 @@ public class ArrayList<T> implements Collection<T> {
 
     public void expansion(int size){
         //构建泛型数组方法-Object强转
-        T[] newItem = (T[]) new Object[size];
+        int length = size * 2;
+        T[] newItem = (T[]) new Object[length];
 
-//        T[] newItem = new T[10];
+        for(int i = 0;i < size();i++){
+            newItem[i] = this.item[i];
+        }
+
+        this.item = newItem;
     }
 
     /**
