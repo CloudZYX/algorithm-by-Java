@@ -38,15 +38,18 @@ public class Function {
      * @return
      */
     public static <T extends Comparable> int reduceHalfSelect(T[] array, T target){
-        int index = 0;
-        int mid = array.length / 2;
+        int index = -1;
+        int low = 0, high = array.length - 1;
+        int mid = high / 2;
 
-        if (array[mid].compareTo(target) == 0){
-            index = mid;
-        }else if (array[mid].compareTo(target) > 0){
-
-        }else if (array[mid].compareTo(target) < 0){
-
+        while (low <= high){
+            if (array[mid].compareTo(target) == 0){
+                index = mid;
+            }else if (array[mid].compareTo(target) > 0){
+                low = mid + 1;
+            }else if (array[mid].compareTo(target) < 0){
+                high = mid -1;
+            }
         }
 
 
