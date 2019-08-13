@@ -45,15 +45,38 @@ public class Function {
         while (low <= high){
             if (array[mid].compareTo(target) == 0){
                 index = mid;
-            }else if (array[mid].compareTo(target) > 0){
-                low = mid + 1;
+                break;
             }else if (array[mid].compareTo(target) < 0){
+                //小于目标数
+                low = mid + 1;
+                mid = (low + high) / 2;
+            }else if (array[mid].compareTo(target) > 0){
+                //大于目标数
                 high = mid -1;
+                mid = (low + high) / 2;
             }
         }
 
-
         return index;
+    }
+
+    public static int maxCommonDivisor(int m, int n){
+        if (n > m){
+            System.out.println("");
+            return -1;
+        }
+        int tem = -1;
+
+        while (tem != 0){
+            tem = m % n;
+            if (tem == 0){
+                break;
+            }
+
+            m = n;
+            n = tem;
+        }
+        return n;
     }
 
 
