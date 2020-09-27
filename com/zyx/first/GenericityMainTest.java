@@ -34,10 +34,11 @@ public class GenericityMainTest {
         int index = findMax(shapeArr);
         System.out.println("最大的图形为数列第" + (index + 1) + "项" +  " 最大的图形面积为：" + shapeArr[index].getArea());
 
+        //使用函数对象实现
+        System.out.println("2.3 使用函数对象");
         String[] nameArr = {"zyx","blm","xzg","zyxL"};
         System.out.println("最大的字符串是：" + nameArr[findMax(nameArr)]);
 
-        //使用函数对象实现
         StringComparaUtil cmp = new StringComparaUtil();
         System.out.println("最大的字符串是：" + nameArr[findMax(nameArr, cmp)]);
 
