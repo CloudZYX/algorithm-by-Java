@@ -11,8 +11,8 @@ public class Lesson1_01_binary {
 
     /**
      * 通过BigInteger将十进制转换二进制
-     * @param param
-     * @return
+     * @param param 十进制数
+     * @return      二进制字符串
      */
     public static String decimalToBinaryByBigInteger(Integer param){
         return new BigInteger(String.valueOf(param)).toString(MIN_RADIX);
@@ -20,8 +20,8 @@ public class Lesson1_01_binary {
 
     /**
      * 通过BigInteger将二进制转换十进制
-     * @param param
-     * @return
+     * @param param 二进制字符串
+     * @return      十进制数
      */
     public static Integer binaryToDecimalByBigInteger(String param){
         return new BigInteger(param, MIN_RADIX).intValue();
@@ -29,9 +29,9 @@ public class Lesson1_01_binary {
 
     /**
      * 左移
-     * @param param
-     * @param bit
-     * @return
+     * @param param 参数
+     * @param bit   移动位数
+     * @return      返回值
      */
     public static Integer leftShift(Integer param, Integer bit){
         return param<<bit;
@@ -39,9 +39,9 @@ public class Lesson1_01_binary {
 
     /**
      * 右移
-     * @param param
-     * @param bit
-     * @return
+     * @param param 参数
+     * @param bit   移动位数
+     * @return      返回值
      */
     public static Integer rightShift(Integer param, Integer bit){
         return param>>bit;
@@ -49,9 +49,9 @@ public class Lesson1_01_binary {
 
     /**
      * 算术右移
-     * @param param
-     * @param bit
-     * @return
+     * @param param 参数
+     * @param bit   移动位数
+     * @return      返回值
      */
     public static Integer arithmeticRightShift(Integer param, Integer bit){
         return param>>>bit;
@@ -59,9 +59,9 @@ public class Lesson1_01_binary {
 
     /**
      * 位或
-     * @param param1
-     * @param param2
-     * @return
+     * @param param1    参数1
+     * @param param2    参数2
+     * @return          返回值
      */
     public static Integer bitOr(Integer param1, Integer param2){
         return param1 | param2;
@@ -69,9 +69,9 @@ public class Lesson1_01_binary {
 
     /**
      * 位与
-     * @param param1
-     * @param param2
-     * @return
+     * @param param1    参数1
+     * @param param2    参数2
+     * @return          返回值
      */
     public static Integer bitAnd(Integer param1, Integer param2){
         return param1 & param2;
@@ -79,9 +79,9 @@ public class Lesson1_01_binary {
 
     /**
      * 异或
-     * @param param1
-     * @param param2
-     * @return
+     * @param param1    参数1
+     * @param param2    参数2
+     * @return          返回值
      */
     public static Integer bitXor(Integer param1, Integer param2){
         return param1 ^ param2;
@@ -89,8 +89,8 @@ public class Lesson1_01_binary {
 
     /**
      * 位非
-     * @param param
-     * @return
+     * @param param 参数
+     * @return      返回值
      */
     public static Integer bitError(Integer param){
         return -param;
@@ -99,44 +99,34 @@ public class Lesson1_01_binary {
     public static void main(String[] args) {
         System.out.println("---二进制与十进制的转换---");
         Integer params1 = 10;
-        String binaryParams = Lesson1_01_binary.decimalToBinaryByBigInteger(params1);
-        Integer decimalParams = Lesson1_01_binary.binaryToDecimalByBigInteger(binaryParams);
-        System.out.println(String.format("参数%s的二进制为%s", params1, binaryParams));
-        System.out.println(String.format("参数%s的十进制为%s", binaryParams, decimalParams));
+        String binaryParams = decimalToBinaryByBigInteger(params1);
+        Integer decimalParams = binaryToDecimalByBigInteger(binaryParams);
+        System.out.printf("参数%s的 二进制 为%s%n", params1, binaryParams);
+        System.out.printf("参数%s的 十进制 为%s%n", binaryParams, decimalParams);
         System.out.println();
 
         System.out.println("---移位操作---");
         Integer params2 = -133;
         Integer bitParams = 2;
-        System.out.println(String.format("参数%s的二进制为%s", params2,
-                Lesson1_01_binary.decimalToBinaryByBigInteger(params2)));
-        System.out.println(String.format("参数%s左移%s位为：%s", params2, bitParams,
-                Lesson1_01_binary.leftShift(params2, bitParams)));
-        System.out.println(String.format("参数%s右移%s位为：%s", params2, bitParams,
-                Lesson1_01_binary.rightShift(params2, bitParams)));
-        System.out.println(String.format("参数%s算术右移%s位为：%s",params2, bitParams,
-                Lesson1_01_binary.arithmeticRightShift(params2, bitParams)));
+        System.out.printf("参数%s的二进制为%s%n", params2, decimalToBinaryByBigInteger(params2));
+        System.out.printf("参数%s 左移 %s位为：%s%n", params2, bitParams, leftShift(params2, bitParams));
+        System.out.printf("参数%s 右移 %s位为：%s%n", params2, bitParams, rightShift(params2, bitParams));
+        System.out.printf("参数%s 算术右移 %s位为：%s%n", params2, bitParams, arithmeticRightShift(params2, bitParams));
         System.out.println();
 
         System.out.println("---位操作---");
         Integer params3 = 16;
         Integer params4 = 21;
-        System.out.println(String.format("参数%s的二进制为%s", params3,
-                Lesson1_01_binary.decimalToBinaryByBigInteger(params3)));
-        System.out.println(String.format("参数%s的二进制为%s", params4,
-                Lesson1_01_binary.decimalToBinaryByBigInteger(params4)));
+        System.out.printf("参数%s的二进制为%s%n", params3, decimalToBinaryByBigInteger(params3));
+        System.out.printf("参数%s的二进制为%s%n", params4, decimalToBinaryByBigInteger(params4));
 
-        Integer orResult = Lesson1_01_binary.bitOr(params3, params4);
-        Integer andResult = Lesson1_01_binary.bitAnd(params3, params4);
-        Integer xorResult = Lesson1_01_binary.bitXor(params3, params4);
-        Integer errorResult = Lesson1_01_binary.bitError(params3);
-        System.out.println(String.format("参数%s和参数%s的按位或为%s，二进制为%s", params3, params4, orResult,
-                Lesson1_01_binary.decimalToBinaryByBigInteger(orResult)));
-        System.out.println(String.format("参数%s和参数%s的按位与为%s，二进制为%s", params3, params4, andResult,
-                Lesson1_01_binary.decimalToBinaryByBigInteger(andResult)));
-        System.out.println(String.format("参数%s和参数%s的按位异或为%s，二进制为%s", params3, params4, xorResult,
-                Lesson1_01_binary.decimalToBinaryByBigInteger(xorResult)));
-        System.out.println(String.format("参数%s的按位非为%s，二进制为%s", params3, errorResult,
-                Lesson1_01_binary.decimalToBinaryByBigInteger(errorResult)));
+        Integer orResult = bitOr(params3, params4);
+        Integer andResult = bitAnd(params3, params4);
+        Integer xorResult = bitXor(params3, params4);
+        Integer errorResult = bitError(params3);
+        System.out.printf("参数%s和参数%s的 按位或 为%s，二进制为%s%n", params3, params4, orResult, decimalToBinaryByBigInteger(orResult));
+        System.out.printf("参数%s和参数%s的 按位与 为%s，二进制为%s%n", params3, params4, andResult, decimalToBinaryByBigInteger(andResult));
+        System.out.printf("参数%s和参数%s的 按位异或 为%s，二进制为%s%n", params3, params4, xorResult, decimalToBinaryByBigInteger(xorResult));
+        System.out.printf("参数%s的 按位非 为%s，二进制为%s%n", params3, errorResult, decimalToBinaryByBigInteger(errorResult));
     }
 }

@@ -1,5 +1,8 @@
-// package src.zyx.util;
+ package com.zyx.util;
 
+/**
+ * @author zyx
+ */
 public class ServiceException{
 
 }
