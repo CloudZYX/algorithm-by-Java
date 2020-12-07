@@ -1,6 +1,6 @@
-package com.zyx.third.arraylist;
+package com.zyx.java_algorithm.third.arraylist;
 
-import com.zyx.third.collectioninterface.Collection;
+import com.zyx.java_algorithm.third.collectioninterface.Collection;
 
 import java.util.Iterator;
 import java.util.function.Consumer;

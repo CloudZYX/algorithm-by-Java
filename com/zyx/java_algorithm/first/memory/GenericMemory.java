@@ -1,4 +1,4 @@
-package com.zyx.first.memory;
+package com.zyx.java_algorithm.first.memory;
 
 public class GenericMemory<T> {
 

@@ -1,6 +1,5 @@
-package com.zyx.second.runtime;
+package com.zyx.java_algorithm.second.runtime;
 
-import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class Serise implements Function<Integer,Integer>{

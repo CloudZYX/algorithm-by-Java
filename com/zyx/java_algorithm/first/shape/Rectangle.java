@@ -1,4 +1,4 @@
-package com.zyx.first.shape;
+package com.zyx.java_algorithm.first.shape;
 
 
 /**

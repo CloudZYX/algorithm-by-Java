@@ -1,8 +1,8 @@
-package com.zyx.first.findmax;
+package com.zyx.java_algorithm.first.findmax;
 
-import com.zyx.first.shape.Circle;
-import com.zyx.first.shape.Rectangle;
-import com.zyx.first.shape.Shape;
+import com.zyx.java_algorithm.first.shape.Circle;
+import com.zyx.java_algorithm.first.shape.Rectangle;
+import com.zyx.java_algorithm.first.shape.Shape;
 
 import java.util.Comparator;
 

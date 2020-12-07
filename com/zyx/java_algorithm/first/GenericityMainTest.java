@@ -1,12 +1,12 @@
-package com.zyx.first;
+package com.zyx.java_algorithm.first;
 
-import com.zyx.first.findmax.StringComparaUtil;
-import com.zyx.first.memory.MemoryCell;
-import com.zyx.first.shape.Circle;
-import com.zyx.first.shape.Rectangle;
-import com.zyx.first.shape.Shape;
+import com.zyx.java_algorithm.first.findmax.StringComparaUtil;
+import com.zyx.java_algorithm.first.memory.MemoryCell;
+import com.zyx.java_algorithm.first.shape.Circle;
+import com.zyx.java_algorithm.first.shape.Rectangle;
+import com.zyx.java_algorithm.first.shape.Shape;
 
-import static com.zyx.first.findmax.FindMaxUtil.findMax;
+import static com.zyx.java_algorithm.first.findmax.FindMaxUtil.findMax;
 
 public class GenericityMainTest {
     public static void main(String[] args) {

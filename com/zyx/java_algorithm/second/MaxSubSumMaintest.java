@@ -1,6 +1,6 @@
-package com.zyx.second;
+package com.zyx.java_algorithm.second;
 
-import com.zyx.second.maxsubsum.MaxSubSum;
+import com.zyx.java_algorithm.second.maxsubsum.MaxSubSum;
 
 public class MaxSubSumMaintest {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.zyx.third.collectioninterface;
+package com.zyx.java_algorithm.third.collectioninterface;
 
 public interface Collection<T> extends Iterable<T>{
     //集合大小

@@ -1,6 +1,6 @@
-package com.zyx.first;
+package com.zyx.java_algorithm.first;
 
-import com.zyx.first.recursion.Function;
+import com.zyx.java_algorithm.first.recursion.Function;
 
 public class RecursionMainTest {
 

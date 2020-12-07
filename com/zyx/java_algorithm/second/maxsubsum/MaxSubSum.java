@@ -1,4 +1,4 @@
-package com.zyx.second.maxsubsum;
+package com.zyx.java_algorithm.second.maxsubsum;
 
 /**
  * 最大子序列之和

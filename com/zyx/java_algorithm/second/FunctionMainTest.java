@@ -1,7 +1,7 @@
-package com.zyx.second;
+package com.zyx.java_algorithm.second;
 
-import com.zyx.second.runtime.Function;
-import com.zyx.second.runtime.Serise;
+import com.zyx.java_algorithm.second.runtime.Function;
+import com.zyx.java_algorithm.second.runtime.Serise;
 
 public class FunctionMainTest {
     public static void main(String[] args) {

@@ -1,8 +1,4 @@
-package com.zyx.second.runtime;
-
-import java.util.List;
-import java.util.function.Consumer;
-import com.zyx.second.runtime.Serise;
+package com.zyx.java_algorithm.second.runtime;
 
 public class Function {
 
