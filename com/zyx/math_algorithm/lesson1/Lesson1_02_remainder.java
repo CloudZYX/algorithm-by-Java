@@ -7,9 +7,9 @@ import com.zyx.util.IntegersUtil;
  */
 public class Lesson1_02_remainder {
 
-    private final static Integer randomNum = 15742589;
+    private final static Integer RANDOM_NUM = 15742589;
 
-    private final static Integer salt = 7;
+    private final static Integer SALT = 7;
 
     /**
      * 简单哈希函数
@@ -18,7 +18,7 @@ public class Lesson1_02_remainder {
      * @return          所属散列数
      */
     public static Integer simpleHashFunction(Integer params, Integer size){
-        return (params + randomNum) % size;
+        return (params + RANDOM_NUM) % size;
     }
 
     /**
@@ -32,7 +32,8 @@ public class Lesson1_02_remainder {
             Integer bit = IntegersUtil.getIntegerBit(params, i);
             //1.每一位数加上随机数
             //2.分别对数 x 取余
-            result += (bit + randomNum) % salt * Double.valueOf(Math.pow(10, i)).intValue();
+            //todo 幂函数
+            result += (bit + RANDOM_NUM) % SALT * Double.valueOf(Math.pow(10, i)).intValue();
         }
         return result;
     }
