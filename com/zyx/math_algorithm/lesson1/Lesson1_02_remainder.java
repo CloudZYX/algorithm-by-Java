@@ -29,10 +29,11 @@ public class Lesson1_02_remainder {
     public static Integer simpleEncrypt(Integer params){
         int result = 0;
         for (int i = 1; i <= IntegersUtil.integerSize(params); i++){
+            //获取第i位数
             Integer bit = IntegersUtil.getIntegerBit(params, i);
             //1.每一位数加上随机数
             //2.分别对数 x 取余
-            //todo 幂函数
+            //todo 幂函数-将每位数的结果放到对应位上
             result += (bit + RANDOM_NUM) % SALT * Double.valueOf(Math.pow(10, i)).intValue();
         }
         return result;
